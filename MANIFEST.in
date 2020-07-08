@@ -1,0 +1,6 @@
+include __pkginfo__.py
+include LICENSE
+include requirements.txt
+recursive-exclude **/__pycache__ *
+recursive-include flake8_sphinx_links/ *.pyi
+include flake8_sphinx_links/py.typed
