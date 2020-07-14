@@ -1,50 +1,153 @@
 # stdlib
 import ast
 
+# 3rd party
+import pytest
+
 # this package
-import pathlib
-from pprint import pprint
+from flake8_sphinx_links import Plugin, SXL001
+from flake8_sphinx_links import py_obj, py_obj_python, exc, class_
 
-from flake8_sphinx_links import Plugin
-#
-#
-# def results(s):
-# 	return {"{}:{}: {}".format(*r) for r in Plugin(ast.parse(s)).run()}
-#
-#
-# def test_linux_specific():
-# 	assert results('print(f"{now:%Y/%-m/%-d %H:%M}")') == {  # noqa: sphinx_links001
-# 		"1:9: sphinx_links001 Linux-specific sphinx_links code used.",
-# 		"1:13: sphinx_links001 Linux-specific sphinx_links code used.",
-# 		}
-#
-# 	assert results('print(now.sphinx_links("%Y/%-m/%-d %H:%M"))') == {  # noqa: sphinx_links001
-# 		"1:22: sphinx_links001 Linux-specific sphinx_links code used.",
-# 		"1:26: sphinx_links001 Linux-specific sphinx_links code used.",
-# 		}
-#
-#
-# def test_windows_specific():
-# 	assert results('print(f"{now:%Y/%#m/%#d %H:%M}")') == {  # noqa: sphinx_links002
-# 		"1:9: sphinx_links002 Windows-specific sphinx_links code used.",
-# 		"1:13: sphinx_links002 Windows-specific sphinx_links code used.",
-# 		}
-#
-# 	assert results('print(now.sphinx_links("%Y/%#m/%#d %H:%M"))') == {  # noqa: sphinx_links002
-# 		"1:22: sphinx_links002 Windows-specific sphinx_links code used.",
-# 		"1:26: sphinx_links002 Windows-specific sphinx_links code used.",
-# 		}
 
+def results(s):
+	return {"{}:{}: {}".format(*r) for r in Plugin(ast.parse(s)).run()}
+
+
+@pytest.mark.parametrize("obj", py_obj)
+def test_bad_docstring_py_obj(obj):
+	test_code = f'''"""
+
+``{obj}``
+
+"""
 
 class BadDocstring:
-	"""
-	``True``
-
-	``False``
-
-	``None``
-
+	"""``{obj}``
 	"""
 
+def bad_docstring():
+	"""
+	``{obj}``
+	"""
 
-pprint(list(Plugin(ast.parse(pathlib.Path(__file__).read_text())).run()))
+class GoodDocstring:
+	""":py:obj:`{obj}`
+	"""
+
+def good_docstring():
+	"""
+	:py:obj:`{obj}`
+	"""
+
+'''
+
+	assert results(test_code
+					) == {  # noqa: sphinx_links001
+							f"3:0: {SXL001}",
+							f"8:0: {SXL001}",
+							f"13:1: {SXL001}",
+							}
+
+
+@pytest.mark.parametrize("obj", py_obj_python)
+def test_bad_docstring_py_obj_python(obj):
+	test_code = f'''"""
+
+``{obj}``
+
+"""
+
+class BadDocstring:
+	"""``{obj}``
+	"""
+
+class bad_docstring():
+	"""
+	``{obj}``
+	"""
+
+class GoodDocstring:
+	""":py:obj:`python:{obj}`
+	"""
+
+class good_docstring():
+	"""
+	:py:obj:`python:{obj}`
+	"""
+
+'''
+
+	assert results(test_code
+					) == {  # noqa: sphinx_links001
+							f"3:0: {SXL001}",
+							f"8:0: {SXL001}",
+							f"13:1: {SXL001}",
+							}
+
+
+@pytest.mark.parametrize("obj", exc)
+def test_bad_docstring_exc(obj):
+	test_code = f'''"""
+
+``{obj}``
+
+"""
+
+class BadDocstring:
+	"""``{obj}``
+	"""
+
+class bad_docstring():
+	"""``{obj}``"""
+
+class GoodDocstring:
+	""":exc:`{obj}`
+	"""
+
+class good_docstring():
+	"""
+	:exc:`{obj}`
+	"""
+
+'''
+
+	assert results(test_code
+					) == {  # noqa: sphinx_links001
+							f"3:0: {SXL001}",
+							f"8:0: {SXL001}",
+							f"12:0: {SXL001}",
+							}
+
+
+@pytest.mark.parametrize("obj", class_)
+def test_bad_docstring_class_(obj):
+	test_code = f'''"""
+
+``{obj}``
+
+"""
+
+class BadDocstring:
+	"""``{obj}``
+	"""
+
+class bad_docstring():
+	"""
+	``{obj}``
+	"""
+
+class GoodDocstring:
+	""":class:`{obj}`
+	"""
+
+class good_docstring():
+	""":class:`{obj}`"""
+
+'''
+
+	assert results(test_code
+					) == {  # noqa: sphinx_links001
+							f"3:0: {SXL001}",
+							f"8:0: {SXL001}",
+							f"13:1: {SXL001}",
+							}

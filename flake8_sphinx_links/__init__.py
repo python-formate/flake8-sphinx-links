@@ -31,16 +31,128 @@ A flake8 plugin which checks for use of platform specific sphinx_links codes.
 
 # stdlib
 import ast
+import platform
 import re
-from typing import Any, Dict, Generator, List, Tuple, Type, Union
+import sys
+from typing import Any, Dict, Generator, List, Pattern, Tuple, Type, Union
 
-__author__ = "Dominic Davis-Foster"
-__copyright__ = "2020 Dominic Davis-Foster"
-__license__ = "MIT"
-__version__ = "0.1.1"
-__email__ = "dominic@davis-foster.co.uk"
+__author__: str = "Dominic Davis-Foster"
+__copyright__: str = "2020 Dominic Davis-Foster"
+__license__: str = "MIT"
+__version__: str = "0.1.1"
+__email__: str = "dominic@davis-foster.co.uk"
 
-SXL001 = "SXL001 Double backticked variable should be a link to Python documentation."  # noqa: E501
+SXL001: str = "SXL001 Double backticked strings should be a link to Python documentation."  # noqa: E501
+
+py_obj: List[str] = [
+		"True",
+		"False",
+		"None",
+		"NotImplemented",
+		"Ellipsis",
+		"__debug__",
+		"quit",
+		"exit",
+		"credits",
+		"license",
+		]
+
+py_obj_python: List[str] = ["copyright"]
+
+exc: List[str] = [
+		"BaseException",
+		"Exception",
+		"ArithmeticError",
+		"BufferError",
+		"LookupError",
+		"AssertionError",
+		"AttributeError",
+		"EOFError",
+		"FloatingPointError",
+		"GeneratorExit",
+		"ImportError",
+		"ModuleNotFoundError",
+		"IndexError",
+		"KeyError",
+		"KeyboardInterrupt",
+		"MemoryError",
+		"NameError",
+		"NotImplementedError",
+		"OSError",
+		"OverflowError",
+		"RecursionError",
+		"ReferenceError",
+		"RuntimeError",
+		"StopIteration",
+		"StopAsyncIteration",
+		"SyntaxError",
+		"IndentationError",
+		"TabError",
+		"SyntaxError",
+		"IndentationError",
+		"TabError",
+		"SystemError",
+		"SystemExit",
+		"TypeError",
+		"UnboundLocalError",
+		"UnicodeError",
+		"UnicodeEncodeError",
+		"UnicodeDecodeError",
+		"UnicodeTranslateError",
+		"ValueError",
+		"ZeroDivisionError",
+		"EnvironmentError",
+		"IOError",
+		"WindowsError",
+		"BlockingIOError",
+		"ChildProcessError",
+		"ConnectionError",
+		"BrokenPipeError",
+		"ConnectionAbortedError",
+		"ConnectionRefusedError",
+		"ConnectionResetError",
+		"FileExistsError",
+		"FileNotFoundError",
+		"InterruptedError",
+		"IsADirectoryError",
+		"NotADirectoryError",
+		"PermissionError",
+		"ProcessLookupError",
+		"TimeoutError",
+		"Warning",
+		"UserWarning",
+		"DeprecationWarning",
+		"PendingDeprecationWarning",
+		"SyntaxWarning",
+		"RuntimeWarning",
+		"FutureWarning",
+		"ImportWarning",
+		"UnicodeWarning",
+		"BytesWarning",
+		"ResourceWarning",
+		]
+
+class_: List[str] = [
+		"int",
+		"float",
+		"complex",
+		"list",
+		"tuple",
+		"range",
+		"str",
+		"bytes",
+		"bytearray",
+		"memoryview",
+		"set",
+		"frozenset",
+		"dict",
+		]
+
+# TODO: Check for wrong links too
+
+all_objs: str = '|'.join(py_obj + py_obj_python + exc + class_)
+
+regex: Pattern = re.compile(fr"(``)({all_objs})(``)")
 
 
 class Visitor(ast.NodeVisitor):
@@ -58,28 +170,38 @@ class Visitor(ast.NodeVisitor):
 
 		if docstring:
 
-			doc_end_lineno = node.body[0].value.lineno
 			split_docstring = docstring.splitlines()
 			doc_line_length = len(split_docstring)
+			# print(f"|{docstring}|")
 
 			# Special casing for docstrings where the final line doesn't have indentation.
 			# (Usually module docstring)
 			if not re.match(r"^\s+$", split_docstring[-1]):
 				doc_line_length += 1
 
-			# Calculate the start line
-			doc_start_lineno = doc_end_lineno - doc_line_length
+			if (
+					sys.version_info < (3, 8) and platform.python_implementation() != "PyPy"
+					):  # pragma: no cover (>=PY38)
+				doc_end_lineno = node.body[0].value.lineno  # type: ignore
 
-			# If docstring is only a single line the start_lineno is 1 less than the end_lineno.
-			# (-1 because docutils start counting at 1)
-			if len(split_docstring) == 1:
-				doc_start_lineno = doc_end_lineno - 1
+				# Calculate the start line
+				doc_start_lineno = doc_end_lineno - doc_line_length
+
+				# If docstring is only a single line the start_lineno is 1 less than the end_lineno.
+				# (-1 because docutils start counting at 1)
+				if len(split_docstring) == 1:
+					doc_start_lineno = doc_end_lineno - 1
+
+				doc_start_lineno += 1
+
+			else:  # pragma: no cover (<PY38)
+				doc_start_lineno = node.body[0].value.lineno  # type: ignore
 
 			for offset, line in enumerate(docstring.splitlines()):
 
-				for match in re.finditer(r"``True``|``False``|``None``", line):
+				for match in regex.finditer(line):
 					self.errors.append((
-							doc_start_lineno + offset + 1,
+							doc_start_lineno + offset,
 							match.span()[0],
 							SXL001,
 							))
