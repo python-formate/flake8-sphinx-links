@@ -15,8 +15,10 @@ sys.path.append(os.path.abspath('..'))
 
 from __pkginfo__ import __version__
 
+# User-configurable lines
+# End of user-configurable lines
 
-github_url = f"https://github.com/domdfcoding/flake8_sphinx_links"
+github_url = "https://github.com/domdfcoding/flake8_sphinx_links"
 
 rst_prolog = f""".. |pkgname| replace:: flake8_sphinx_links
 .. |pkgname2| replace:: ``flake8_sphinx_links``
@@ -45,6 +47,8 @@ extensions = [
 		"sphinx-prompt",
 		"sphinx_autodoc_typehints",
 		"sphinx.ext.autosummary",
+		"autodocsumm",
+		"sphinx_copybutton",
 		]
 
 sphinxemoji_style = 'twemoji'
@@ -78,15 +82,14 @@ html_theme_options = {
 		'logo_only': False,
 		}
 html_theme_path = ["../.."]
-# html_logo = "logo/pyms.png"
-html_show_sourcelink = False  # True will show link to source
+html_show_sourcelink = True  # True will show link to source
 
 html_context = {
 		'display_github': True,
 		'github_user': 'domdfcoding',
 		'github_repo': 'flake8_sphinx_links',
 		'github_version': 'master',
-		'conf_py_path': '/',
+		'conf_py_path': '/doc-source/',
 		}
 
 htmlhelp_basename = slug
@@ -111,14 +114,14 @@ def setup(app):
 							'type',
 							label=_('Type'),
 							has_arg=False,
-							names=('type',),
-							bodyrolename='class'
+							names=('type', ),
+							bodyrolename='class',
 							),
 					Field(
 							'default',
 							label=_('Default'),
 							has_arg=False,
-							names=('default',),
+							names=('default', ),
 							),
 					]
 			)

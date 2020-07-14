@@ -4,7 +4,7 @@ flake8_sphinx_links
 
 .. start short_desc
 
-**A flake8 plugin which checks docstrings for double backticked variables that should be links to the Python documentation.**
+**A flake8 plugin which checks docstrings for double backticked strings that should be links to the Python documentation.**
 
 .. end short_desc
 
@@ -26,7 +26,7 @@ flake8_sphinx_links
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained|
 	* - Other
-	  - |license| |language| |requires|
+	  - |license| |language| |requires| |pre_commit|
 
 .. |docs| image:: https://img.shields.io/readthedocs/flake8_sphinx_links/latest?logo=read-the-docs
 	:target: https://flake8_sphinx_links.readthedocs.io/en/latest/?badge=latest
@@ -101,6 +101,10 @@ flake8_sphinx_links
 
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2020
 	:alt: Maintenance
+
+.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+	:target: https://github.com/pre-commit/pre-commit
+	:alt: pre-commit
 
 .. end shields
 
