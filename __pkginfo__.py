@@ -39,7 +39,7 @@ __copyright__ = """
 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 modname = "flake8_sphinx_links"
 pypi_name = "flake8_sphinx_links"
 import_name = "flake8_sphinx_links"

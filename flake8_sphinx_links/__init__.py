@@ -39,7 +39,7 @@ from typing import Any, Dict, Generator, List, Pattern, Tuple, Type, Union
 __author__: str = "Dominic Davis-Foster"
 __copyright__: str = "2020 Dominic Davis-Foster"
 __license__: str = "MIT"
-__version__: str = "0.0.3"
+__version__: str = "0.0.4"
 __email__: str = "dominic@davis-foster.co.uk"
 
 SXL001: str = "SXL001 Double backticked strings should be a link to Python documentation."  # noqa: E501
