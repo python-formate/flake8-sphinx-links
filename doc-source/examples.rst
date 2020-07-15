@@ -50,9 +50,9 @@ Examples
 
 |
 
-\`\`copyright\`\` => \:py\:obj\:\`copyright\`
+\`\`copyright\`\` => \:py\:obj\:\`python:copyright\`
 
-``copyright`` => :py:obj:`copyright`
+``copyright`` => :py:obj:`python:copyright`
 
 |
 

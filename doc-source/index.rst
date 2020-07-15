@@ -107,6 +107,12 @@ flake8_sphinx_links
 
 .. end shields
 
+For example, \`\`True\`\` should be py\:obj:\`True\`, which Sphinx will render as a link to the Python documentation.
+See :doc:`examples` for further examples.
+
+reStructuredText .rst files are not currently checked.
+
+
 Installation
 ---------------
 
