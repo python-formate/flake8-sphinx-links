@@ -18,7 +18,7 @@ from __pkginfo__ import __version__
 # User-configurable lines
 # End of user-configurable lines
 
-github_url = "https://github.com/domdfcoding/flake8_sphinx_links"
+github_url = "https://github.com/domdfcoding/flake8-sphinx-links"
 
 rst_prolog = f""".. |pkgname| replace:: flake8_sphinx_links
 .. |pkgname2| replace:: ``flake8_sphinx_links``
@@ -87,7 +87,7 @@ html_show_sourcelink = True  # True will show link to source
 html_context = {
 		'display_github': True,
 		'github_user': 'domdfcoding',
-		'github_repo': 'flake8_sphinx_links',
+		'github_repo': 'flake8-sphinx-links',
 		'github_version': 'master',
 		'conf_py_path': '/doc-source/',
 		}

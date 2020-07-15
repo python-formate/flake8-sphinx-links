@@ -48,7 +48,7 @@ short_desc = "A flake8 plugin which checks docstrings for double backticked stri
 __author__ = author = "Dominic Davis-Foster"
 author_email = "dominic@davis-foster.co.uk"
 github_username = "domdfcoding"
-web = github_url = "https://github.com/domdfcoding/flake8_sphinx_links"
+web = github_url = "https://github.com/domdfcoding/flake8-sphinx-links"
 repo_root = pathlib.Path(__file__).parent
 install_requires = (repo_root / "requirements.txt").read_text(encoding="utf-8").split('\n')
 extras_require = {'all': []}
@@ -63,7 +63,7 @@ __all__.append("conda_description")
 
 
 project_urls = {
-		"Documentation": "https://flake8_sphinx_links.readthedocs.io",
+		"Documentation": "https://flake8-sphinx-links.readthedocs.io",
 		"Issue Tracker": f"{github_url}/issues",
 		"Source Code": github_url,
 		}

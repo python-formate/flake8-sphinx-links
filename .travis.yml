@@ -37,7 +37,7 @@ jobs:
       deploy:
         on:
           tags: true
-          repo: domdfcoding/flake8_sphinx_links
+          repo: domdfcoding/flake8-sphinx-links
         provider: pypi
         user: "DomDF"
         password:
@@ -57,6 +57,6 @@ jobs:
       script: skip
       deploy:
         on:
-          repo: domdfcoding/flake8_sphinx_links
+          repo: domdfcoding/flake8-sphinx-links
         provider: script
         script: .ci/travis_deploy_conda.sh || return 1;

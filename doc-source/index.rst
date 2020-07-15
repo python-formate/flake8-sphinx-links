@@ -27,36 +27,36 @@ flake8_sphinx_links
 	* - Other
 	  - |license| |language| |requires| |pre_commit|
 
-.. |docs| image:: https://img.shields.io/readthedocs/flake8_sphinx_links/latest?logo=read-the-docs
-	:target: https://flake8_sphinx_links.readthedocs.io/en/latest/?badge=latest
+.. |docs| image:: https://img.shields.io/readthedocs/flake8-sphinx-links/latest?logo=read-the-docs
+	:target: https://flake8-sphinx-links.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/flake8_sphinx_links/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/flake8_sphinx_links/actions?query=workflow%3A%22Docs+Check%22
+.. |docs_check| image:: https://github.com/domdfcoding/flake8-sphinx-links/workflows/Docs%20Check/badge.svg
+	:target: https://github.com/domdfcoding/flake8-sphinx-links/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/flake8_sphinx_links/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/flake8_sphinx_links
+.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/flake8-sphinx-links/master?logo=travis
+	:target: https://travis-ci.com/domdfcoding/flake8-sphinx-links
 	:alt: Travis Build Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/flake8_sphinx_links/workflows/Windows%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/flake8_sphinx_links/actions?query=workflow%3A%22Windows+Tests%22
+.. |actions_windows| image:: https://github.com/domdfcoding/flake8-sphinx-links/workflows/Windows%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/flake8-sphinx-links/actions?query=workflow%3A%22Windows+Tests%22
 	:alt: Windows Tests Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/flake8_sphinx_links/workflows/macOS%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/flake8_sphinx_links/actions?query=workflow%3A%22macOS+Tests%22
+.. |actions_macos| image:: https://github.com/domdfcoding/flake8-sphinx-links/workflows/macOS%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/flake8-sphinx-links/actions?query=workflow%3A%22macOS+Tests%22
 	:alt: macOS Tests Status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/flake8_sphinx_links/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/flake8_sphinx_links/requirements/?branch=master
+.. |requires| image:: https://requires.io/github/domdfcoding/flake8-sphinx-links/requirements.svg?branch=master
+	:target: https://requires.io/github/domdfcoding/flake8-sphinx-links/requirements/?branch=master
 	:alt: Requirements Status
 
-.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/flake8_sphinx_links/master?logo=coveralls
-	:target: https://coveralls.io/github/domdfcoding/flake8_sphinx_links?branch=master
+.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/flake8-sphinx-links/master?logo=coveralls
+	:target: https://coveralls.io/github/domdfcoding/flake8-sphinx-links?branch=master
 	:alt: Coverage
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/flake8_sphinx_links?logo=codefactor
-	:target: https://www.codefactor.io/repository/github/domdfcoding/flake8_sphinx_links
+.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/flake8-sphinx-links?logo=codefactor
+	:target: https://www.codefactor.io/repository/github/domdfcoding/flake8-sphinx-links
 	:alt: CodeFactor Grade
 
 .. |pypi-version| image:: https://img.shields.io/pypi/v/flake8_sphinx_links
@@ -83,19 +83,19 @@ flake8_sphinx_links
 	:target: https://anaconda.org/domdfcoding/flake8_sphinx_links
 	:alt: Conda - Platform
 
-.. |license| image:: https://img.shields.io/github/license/domdfcoding/flake8_sphinx_links
-	:target: https://github.com/domdfcoding/flake8_sphinx_links/blob/master/LICENSE
+.. |license| image:: https://img.shields.io/github/license/domdfcoding/flake8-sphinx-links
+	:target: https://github.com/domdfcoding/flake8-sphinx-links/blob/master/LICENSE
 	:alt: License
 
-.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/flake8_sphinx_links
+.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/flake8-sphinx-links
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/flake8_sphinx_links/v0.1.1
-	:target: https://github.com/domdfcoding/flake8_sphinx_links/pulse
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/flake8-sphinx-links/v0.1.1
+	:target: https://github.com/domdfcoding/flake8-sphinx-links/pulse
 	:alt: GitHub commits since tagged version
 
-.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/flake8_sphinx_links
-	:target: https://github.com/domdfcoding/flake8_sphinx_links/commit/master
+.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/flake8-sphinx-links
+	:target: https://github.com/domdfcoding/flake8-sphinx-links/commit/master
 	:alt: GitHub last commit
 
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2020
@@ -139,7 +139,7 @@ Installation
 
 		.. prompt:: bash
 
-			python3 -m pip install git+https://github.com/domdfcoding/flake8_sphinx_links@master --user
+			python3 -m pip install git+https://github.com/domdfcoding/flake8-sphinx-links@master --user
 
 .. end installation
 
@@ -162,6 +162,6 @@ Installation
 
 View the :ref:`Function Index <genindex>` or browse the `Source Code <_modules/index.html>`__.
 
-`Browse the GitHub Repository <https://github.com/domdfcoding/flake8_sphinx_links>`__
+`Browse the GitHub Repository <https://github.com/domdfcoding/flake8-sphinx-links>`__
 
 .. end links

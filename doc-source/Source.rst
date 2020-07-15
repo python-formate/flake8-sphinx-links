@@ -3,14 +3,14 @@ Downloading source code
 *******************************
 
 The ``flake8_sphinx_links`` source code resides on publicly accessible GitHub servers,
-and can be accessed from the following URL: https://github.com/domdfcoding/flake8_sphinx_links"
+and can be accessed from the following URL: https://github.com/domdfcoding/flake8-sphinx-links"
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/domdfcoding/flake8_sphinx_links"
-    > Cloning into 'flake8_sphinx_links'...
+    $ git clone https://github.com/domdfcoding/flake8-sphinx-links"
+    > Cloning into 'flake8-sphinx-links'...
     > remote: Enumerating objects: 47, done.
     > remote: Counting objects: 100% (47/47), done.
     > remote: Compressing objects: 100% (41/41), done.
