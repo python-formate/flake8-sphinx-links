@@ -6,7 +6,5 @@ API Reference
 
 .. automodule:: flake8_sphinx_links
 	:members:
-	:private-members:
-	:special-members:
 	:inherited-members:
 	:undoc-members:
