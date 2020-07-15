@@ -90,7 +90,7 @@ flake8_sphinx_links
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/flake8-sphinx-links
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/flake8-sphinx-links/v0.0.1
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/flake8-sphinx-links/v0.0.2
 	:target: https://github.com/domdfcoding/flake8-sphinx-links/pulse
 	:alt: GitHub commits since tagged version
 
