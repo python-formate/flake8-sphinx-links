@@ -2,9 +2,8 @@
 API Reference
 ===========================
 
-.. contents:: Table of Contents
-
 .. automodule:: flake8_sphinx_links
 	:members:
+	:autosummary:
 	:inherited-members:
 	:undoc-members:
