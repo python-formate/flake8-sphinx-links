@@ -157,13 +157,13 @@ See `pre-commit <https://github.com/pre-commit/pre-commit>`_ for instructions
 
 Sample `.pre-commit-config.yaml`:
 
-```yaml
--   repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.1
-    hooks:
-    -   id: flake8
-        additional_dependencies: [flake8-sphinx-links==0.0.4]
-```
+.. code-block:: yaml
+
+	 - repo: https://gitlab.com/pycqa/flake8
+	   rev: 3.8.1
+	   hooks:
+	    - id: flake8
+	      additional_dependencies: [flake8-sphinx-links==0.0.4]
 
 
 .. toctree::
