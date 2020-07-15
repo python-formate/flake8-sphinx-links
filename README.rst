@@ -143,9 +143,8 @@ To install with ``conda``:
 flake8 codes
 --------------
 
-================== ====================================
-Code               Description
-================== ====================================
-sphinx_links001    Linux-specific sphinx_links code used
-sphinx_links002    Windows-specific sphinx_links code used
-================== ====================================
+============== =====================================================================
+Code           Description
+============== =====================================================================
+SXL001         Double backticked variable should be a link to Python documentation.
+============== =====================================================================
