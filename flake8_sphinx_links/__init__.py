@@ -161,11 +161,14 @@ class Visitor(ast.NodeVisitor):
 	"""
 
 	def __init__(self) -> None:
-		"""Initialise the AST NodeVisitor."""
+		"""
+		Initialise the AST NodeVisitor.
+		"""
+
 		self.errors: List[Tuple[int, int, str]] = []
 		self._from_imports: Dict[str, str] = {}
 
-	def _check_docstring(self, node: Union[ast.ClassDef, ast.FunctionDef, ast.Module]):
+	def _check_docstring(self, node: Union[ast.ClassDef, ast.FunctionDef, ast.Module]) -> None:
 		docstring = ast.get_docstring(node, clean=False)
 
 		if docstring:
