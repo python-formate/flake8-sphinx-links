@@ -44,9 +44,9 @@ modname = "flake8_sphinx_links"
 pypi_name = "flake8_sphinx_links"
 import_name = "flake8_sphinx_links"
 __license__ = "MIT License"
-short_desc = "A flake8 plugin which checks docstrings for double backticked strings that should be links to the Python documentation."
-__author__ = author = "Dominic Davis-Foster"
-author_email = "dominic@davis-foster.co.uk"
+short_desc = 'A flake8 plugin which checks docstrings for double backticked strings that should be links to the Python documentation.'
+__author__ = author = 'Dominic Davis-Foster'
+author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
 web = github_url = "https://github.com/domdfcoding/flake8-sphinx-links"
 repo_root = pathlib.Path(__file__).parent
