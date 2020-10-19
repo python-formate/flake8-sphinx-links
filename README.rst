@@ -91,7 +91,7 @@ flake8_sphinx_links
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/flake8-sphinx-links
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/flake8-sphinx-links/v0.0.4
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/flake8-sphinx-links/v0.1.0
 	:target: https://github.com/domdfcoding/flake8-sphinx-links/pulse
 	:alt: GitHub commits since tagged version
 
@@ -165,4 +165,4 @@ Sample `.pre-commit-config.yaml`:
 	   rev: 3.8.1
 	   hooks:
 	    - id: flake8
-	      additional_dependencies: [flake8-sphinx-links==0.0.4]
+	      additional_dependencies: [flake8-sphinx-links==0.1.0]
