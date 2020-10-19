@@ -42,8 +42,20 @@ __license__: str = "MIT"
 __version__: str = "0.0.4"
 __email__: str = "dominic@davis-foster.co.uk"
 
+__all__ = [
+		"SXL001",
+		"Visitor",
+		"Plugin",
+		"py_obj",
+		"py_obj_python",
+		"exc",
+		"class_",
+		"regex",
+		]
+
 SXL001: str = "SXL001 Double backticked strings should be a link to Python documentation."  # noqa: E501
 
+#: List of keywords that should become :file:`:py:obj:\`{<keyword>}\``
 py_obj: List[str] = [
 		"True",
 		"False",
@@ -58,7 +70,12 @@ py_obj: List[str] = [
 		]
 
 py_obj_python: List[str] = ["copyright"]
+"""
+List of keywords that should become :file:`:py:obj:\`python:{<keyword>}\``
+to prevent conflict with Sphinx objects.
+"""
 
+#: List of keywords that should become :file:`:py:exc:\`{<keyword>}\``
 exc: List[str] = [
 		"BaseException",
 		"Exception",
@@ -152,6 +169,7 @@ class_: List[str] = [
 
 all_objs: str = '|'.join(py_obj + py_obj_python + exc + class_)
 
+#: Regex to match keywords that should be Sphinx links.
 regex: Pattern = re.compile(fr"(``)({all_objs})(``)")
 
 

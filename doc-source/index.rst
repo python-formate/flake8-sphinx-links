@@ -133,15 +133,9 @@ Use as a pre-commit hook
 
 See `pre-commit <https://github.com/pre-commit/pre-commit>`_ for instructions
 
-Sample `.pre-commit-config.yaml`:
+Sample ``.pre-commit-config.yaml``:
 
-.. code-block:: yaml
-
-	 - repo: https://gitlab.com/pycqa/flake8
-	   rev: 3.8.1
-	   hooks:
-	    - id: flake8
-	      additional_dependencies: [flake8-sphinx-links==0.0.4]
+.. pre-commit:flake8:: 0.0.4
 
 
 .. toctree::
@@ -156,8 +150,13 @@ Sample `.pre-commit-config.yaml`:
 	codes
 	examples
 	API Reference<docs>
+
+.. toctree::
+	:maxdepth: 3
+	:caption: Contributing
+
+	contributing
 	Source
-	Building
 
 .. start links
 
