@@ -41,3 +41,7 @@ classifiers:
 extra_sphinx_extensions:
   - sphinx_toolbox.pre_commit
   - sphinx_toolbox.flake8
+
+entry_points:
+ flake8.extension:
+  - SXL=flake8_sphinx_links:Plugin
