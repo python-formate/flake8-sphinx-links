@@ -1,3 +1,4 @@
+---
 modname: flake8_sphinx_links
 repo_name: flake8-sphinx-links
 copyright_years: "2020"
@@ -9,39 +10,33 @@ license: 'MIT'
 short_desc: "A flake8 plugin which checks docstrings for double backticked strings that should be links to the Python documentation."
 
 conda_channels:
-  - domdfcoding
-  - conda-forge
+ - domdfcoding
+ - conda-forge
 
 python_deploy_version: 3.6
 
 # Versions to run tests for
 python_versions:
-  - '3.6'
-  - '3.7'
-  - "3.8"
-  - '3.9'
-  - "3.10-dev"
-  - "pypy3"
+ - '3.6'
+ - '3.7'
+ - "3.8"
+ - '3.9'
+ - "3.10-dev"
+ - "pypy3"
 
 # travis secure password for PyPI
 travis_pypi_secure: "P72e1+0LhtTw7dVGOAkvyfauWb2ywwLjdix+0y1eaI+f2i+CBAVtZ7iBLskFCSU7HN6ogkUFBGjrKvZTmvhE133W1ew4NJlqeHAlg6b2Sw40rmyXV7mAEf7rRJyWnqD3JFPbZ/vWC2zOsRA0xUpfl5V6rR50R4EeCZkg2QtBlIcj3HMSH0zo2ROx7tLD6HLBReBhlj2707xfv+Hvs7q4j7qSaMjKTTlc23dr3cq2LMgifE4+sIRD3W9Qsza6CNM6kGAEBuKgNHBhDpi2A24DWy+3UqRXWgBWNTav9rAHACRBTuGlc3zsnN/f6KigNpPUVk89SUN4fqtZXC8nPuYOSof8h3o1S1bKlif2cYNlW856eQP3F0Aq754SLQWaYr0GerYgeacHLmbQC6MVICW/y7bfVPtDjIjqE13xq9TSMeFvEdGRuC43B6GswTVhyLm7yLTXJaHrgqqLMRduSY34Welf+ej7C0eWlWQrG8YyHwNY931pPJxErQqxkSTO3CVnPmomvlzbAjAOsJQmzvAs6DJVaSYbMRj//+7DSfI9tepB2EqLcIQ6wPeTTW31SlX6Tc+7ez9lNNgdk5yxK7Ovmpot8/oGKJ1cMeAl22Gnrkmb8oAHXxCNvtjgaJjxHElSd5HknY9tveaQNZfw88EX3/66YHMNEkLWUJ1RKkZCcoQ="
 
-# directory that contains tests
-tests_dir: "tests"
-
 classifiers:
-  - 'Development Status :: 4 - Beta'
-#  - "Development Status :: 5 - Production/Stable"
-#  - "Development Status :: 6 - Mature"
-#  - "Development Status :: 7 - Inactive"
-  - 'Intended Audience :: Developers'
-  - 'Topic :: Software Development :: Libraries :: Python Modules'
-  - "Topic :: Utilities"
+ - 'Development Status :: 4 - Beta'
+ - 'Framework :: Flake8'
+ - 'Intended Audience :: Developers'
+ - "Topic :: Utilities"
 
 extra_sphinx_extensions:
-  - sphinx_toolbox.pre_commit
-  - sphinx_toolbox.flake8
+ - sphinx_toolbox.pre_commit
+ - sphinx_toolbox.flake8
 
 entry_points:
- flake8.extension:
-  - SXL=flake8_sphinx_links:Plugin
+  flake8.extension:
+   - SXL=flake8_sphinx_links:Plugin
