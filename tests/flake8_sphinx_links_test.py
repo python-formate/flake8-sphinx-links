@@ -5,8 +5,7 @@ import ast
 import pytest
 
 # this package
-from flake8_sphinx_links import Plugin, SXL001
-from flake8_sphinx_links import py_obj, py_obj_python, exc, class_
+from flake8_sphinx_links import SXL001, Plugin, class_, exc, py_obj, py_obj_python
 
 
 def results(s):

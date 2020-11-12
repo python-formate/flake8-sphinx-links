@@ -70,7 +70,7 @@ py_obj: List[str] = [
 		]
 
 py_obj_python: List[str] = ["copyright"]
-"""
+r"""
 List of keywords that should become :file:`:py:obj:\`python:{<keyword>}\``
 to prevent conflict with Sphinx objects.
 """
@@ -187,6 +187,10 @@ class Visitor(ast.NodeVisitor):
 		self._from_imports: Dict[str, str] = {}
 
 	def _check_docstring(self, node: Union[ast.ClassDef, ast.FunctionDef, ast.Module]) -> None:
+		"""
+		Check the docstring of a function, or a method of a class.
+		"""
+
 		docstring = ast.get_docstring(node, clean=False)
 
 		if docstring:
@@ -228,17 +232,14 @@ class Visitor(ast.NodeVisitor):
 							))
 
 	def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
-		"""Check the docstring of a function, or a method of a class."""
 		self._check_docstring(node)
 		super().generic_visit(node)
 
 	def visit_ClassDef(self, node: ast.ClassDef) -> None:
-		"""Check the docstring of a class."""
 		self._check_docstring(node)
 		super().generic_visit(node)
 
 	def visit_Module(self, node: ast.Module) -> None:
-		"""Check the module-level docstring."""
 		self._check_docstring(node)
 		super().generic_visit(node)
 
