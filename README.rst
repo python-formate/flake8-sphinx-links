@@ -36,17 +36,17 @@ flake8_sphinx_links
 	:target: https://github.com/domdfcoding/flake8-sphinx-links/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/flake8-sphinx-links/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/flake8-sphinx-links
-	:alt: Travis Build Status
+.. |travis| image:: https://github.com/domdfcoding/flake8-sphinx-links/workflows/Linux%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/flake8-sphinx-links/actions?query=workflow%3A%Linux+Tests%22
+	:alt: Linux Test Status
 
 .. |actions_windows| image:: https://github.com/domdfcoding/flake8-sphinx-links/workflows/Windows%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/flake8-sphinx-links/actions?query=workflow%3A%22Windows+Tests%22
-	:alt: Windows Tests Status
+	:alt: Windows Test Status
 
 .. |actions_macos| image:: https://github.com/domdfcoding/flake8-sphinx-links/workflows/macOS%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/flake8-sphinx-links/actions?query=workflow%3A%22macOS+Tests%22
-	:alt: macOS Tests Status
+	:alt: macOS Test Status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/flake8-sphinx-links/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/flake8-sphinx-links/requirements/?branch=master
