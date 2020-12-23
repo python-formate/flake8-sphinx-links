@@ -14,7 +14,7 @@ from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 setup(
 		description=
-		"A flake8 plugin which checks docstrings for double backticked strings that should be links to the Python documentation.",
+		"A Flake8 plugin to check docstrings for double backticked strings which should be links to the Python documentation.",
 		extras_require=extras_require,
 		install_requires=install_requires,
 		py_modules=[],

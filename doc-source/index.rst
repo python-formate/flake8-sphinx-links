@@ -4,7 +4,7 @@ flake8_sphinx_links
 
 .. start short_desc
 
-**A flake8 plugin which checks docstrings for double backticked strings that should be links to the Python documentation.**
+**A Flake8 plugin to check docstrings for double backticked strings which should be links to the Python documentation.**
 
 .. end short_desc
 

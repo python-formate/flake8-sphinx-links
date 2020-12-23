@@ -7,7 +7,7 @@ email: "dominic@davis-foster.co.uk"
 version: "0.1.0"
 username: "domdfcoding"
 license: 'MIT'
-short_desc: "A flake8 plugin which checks docstrings for double backticked strings that should be links to the Python documentation."
+short_desc: "A Flake8 plugin to check docstrings for double backticked strings which should be links to the Python documentation."
 
 conda_channels:
  - domdfcoding
