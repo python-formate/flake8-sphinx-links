@@ -2,8 +2,9 @@
 #
 #  __init__.py
 """
-A flake8 plugin which checks for use of platform specific sphinx_links codes.
-"""
+A Flake8 plugin to check docstrings for double backticked strings
+which should be links to the Python documentation.
+"""  # noqa: D400
 #
 #  Copyright (c) 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
@@ -175,14 +176,11 @@ regex: Pattern = re.compile(fr"(``)({all_objs})(``)")
 
 class Visitor(ast.NodeVisitor):
 	"""
-	Class to traverse an Abstract Syntax Tree (AST), extract docstrings and check them.
-	"""
+	A Flake8 plugin to check docstrings for double backticked strings
+	which should be links to the Python documentation.
+	"""  # noqa: D400
 
 	def __init__(self) -> None:
-		"""
-		Initialise the AST NodeVisitor.
-		"""
-
 		self.errors: List[Tuple[int, int, str]] = []
 		self._from_imports: Dict[str, str] = {}
 
@@ -231,20 +229,24 @@ class Visitor(ast.NodeVisitor):
 							SXL001,
 							))
 
-	def visit_FunctionDef(self, node: ast.FunctionDef) -> None:
+	def visit_FunctionDef(self, node: ast.FunctionDef) -> None:  # noqa: D102
 		self._check_docstring(node)
 		super().generic_visit(node)
 
-	def visit_ClassDef(self, node: ast.ClassDef) -> None:
+	def visit_ClassDef(self, node: ast.ClassDef) -> None:  # noqa: D102
 		self._check_docstring(node)
 		super().generic_visit(node)
 
-	def visit_Module(self, node: ast.Module) -> None:
+	def visit_Module(self, node: ast.Module) -> None:  # noqa: D102
 		self._check_docstring(node)
 		super().generic_visit(node)
 
 
 class Plugin:
+	"""
+	Flake8 plugin which checks for use of platform specific sphinx_links codes.
+	"""
+
 	name: str = __name__
 	version: str = __version__
 
