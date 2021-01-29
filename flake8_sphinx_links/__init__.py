@@ -204,7 +204,7 @@ class Visitor(ast.NodeVisitor):
 
 			if (
 					sys.version_info < (3, 8) and platform.python_implementation() != "PyPy"
-					):  # pragma: no cover (>=PY38)
+					):  # pragma: no cover (PY38+) # pragma: no cover (!CPython)
 				doc_end_lineno = node.body[0].value.lineno  # type: ignore
 
 				# Calculate the start line
