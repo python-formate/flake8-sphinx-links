@@ -1,3 +1,4 @@
+# Configuration for 'repo_helper' (https://github.com/domdfcoding/repo_helper)
 ---
 modname: flake8_sphinx_links
 repo_name: flake8-sphinx-links
@@ -19,9 +20,10 @@ python_deploy_version: 3.6
 python_versions:
  - '3.6'
  - '3.7'
- - "3.8"
+ - '3.8'
  - '3.9'
- - "3.10-dev"
+ - 3.10-dev
+ - rustpython
 
 classifiers:
  - 'Development Status :: 4 - Beta'
