@@ -35,10 +35,13 @@ import ast
 import platform
 import re
 import sys
-from typing import Any, Dict, Generator, List, Pattern, Tuple, Type, Union
+from typing import Dict, List, Pattern, Union
+
+# 3rd party
+import flake8_helper
 
 __author__: str = "Dominic Davis-Foster"
-__copyright__: str = "2020 Dominic Davis-Foster"
+__copyright__: str = "2020-2021 Dominic Davis-Foster"
 __license__: str = "MIT"
 __version__: str = "0.1.0"
 __email__: str = "dominic@davis-foster.co.uk"
@@ -56,7 +59,7 @@ __all__ = [
 
 SXL001: str = "SXL001 Double backticked strings should be a link to Python documentation."  # noqa: E501
 
-#: List of keywords that should become :file:`:py:obj:\`{<keyword>}\``
+#: List of keywords which should become :file:`:py:obj:\`{<keyword>}\``
 py_obj: List[str] = [
 		"True",
 		"False",
@@ -76,7 +79,7 @@ List of keywords that should become :file:`:py:obj:\`python:{<keyword>}\``
 to prevent conflict with Sphinx objects.
 """
 
-#: List of keywords that should become :file:`:py:exc:\`{<keyword>}\``
+#: List of keywords which should become :file:`:py:exc:\`{<keyword>}\``
 exc: List[str] = [
 		"BaseException",
 		"Exception",
@@ -174,14 +177,14 @@ all_objs: str = '|'.join(py_obj + py_obj_python + exc + class_)
 regex: Pattern = re.compile(fr"(``)({all_objs})(``)")
 
 
-class Visitor(ast.NodeVisitor):
+class Visitor(flake8_helper.Visitor):
 	"""
-	A Flake8 plugin to check docstrings for double backticked strings
+	AST visitor to check docstrings for double backticked strings
 	which should be links to the Python documentation.
 	"""  # noqa: D400
 
 	def __init__(self) -> None:
-		self.errors: List[Tuple[int, int, str]] = []
+		super().__init__()
 		self._from_imports: Dict[str, str] = {}
 
 	def _check_docstring(self, node: Union[ast.ClassDef, ast.FunctionDef, ast.Module]) -> None:
@@ -242,26 +245,12 @@ class Visitor(ast.NodeVisitor):
 		super().generic_visit(node)
 
 
-class Plugin:
+class Plugin(flake8_helper.Plugin[Visitor]):
 	"""
-	Flake8 plugin which checks for use of platform specific sphinx_links codes.
-	"""
+	Flake8 plugin to check docstrings for double backticked strings
+	which should be links to the Python documentation.
+	"""  # noqa: D400
 
 	name: str = __name__
 	version: str = __version__
-
-	def __init__(self, tree: ast.AST):
-		self._tree = tree
-
-	def run(self) -> Generator[Tuple[int, int, str, Type[Any]], None, None]:
-		"""
-		Traverse the Abstract Syntax Tree, extract docstrings and check them.
-
-		Yields a tuple of (line number, column offset, error message, type(self))
-		"""
-
-		visitor = Visitor()
-		visitor.visit(self._tree)
-
-		for line, col, msg in visitor.errors:
-			yield line, col, msg, type(self)
+	visitor_class = Visitor
