@@ -6,7 +6,7 @@ A Flake8 plugin to check docstrings for double backticked strings
 which should be links to the Python documentation.
 """  # noqa: D400
 #
-#  Copyright (c) 2020 Dominic Davis-Foster <dominic@davis-foster.co.uk>
+#  Copyright (c) 2020-2021 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 #
 #  Based on flake8_2020
 #  Copyright (c) 2019 Anthony Sottile

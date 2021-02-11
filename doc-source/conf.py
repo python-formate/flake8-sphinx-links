@@ -26,7 +26,7 @@ author = "Dominic Davis-Foster"
 project = "flake8_sphinx_links"
 slug = re.sub(r'\W+', '-', project.lower())
 release = version = __version__
-copyright = "2020 Dominic Davis-Foster"  # pylint: disable=redefined-builtin
+copyright = "2020-2021 Dominic Davis-Foster"  # pylint: disable=redefined-builtin
 language = "en"
 package_root = "flake8_sphinx_links"
 
@@ -132,3 +132,5 @@ autodoc_default_options = {
 		"show-inheritance": None,
 		"exclude-members": ','.join(autodoc_exclude_members),
 		}
+
+nitpicky = True

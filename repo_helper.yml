@@ -2,7 +2,7 @@
 ---
 modname: flake8_sphinx_links
 repo_name: flake8-sphinx-links
-copyright_years: "2020"
+copyright_years: "2020-2021"
 author: "Dominic Davis-Foster"
 email: "dominic@davis-foster.co.uk"
 version: "0.1.0"
@@ -38,3 +38,6 @@ entry_points:
    - SXL=flake8_sphinx_links:Plugin
 
 min_coverage: 100
+
+sphinx_conf_epilogue:
+ - nitpicky = True
