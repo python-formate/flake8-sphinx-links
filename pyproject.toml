@@ -7,7 +7,7 @@ name = "flake8_sphinx_links"
 version = "0.1.0"
 description = "A Flake8 plugin to check docstrings for double backticked strings which should be links to the Python documentation."
 readme = "README.rst"
-keywords = []
+keywords = [ "flake8", "sphinx", "documentation",]
 dynamic = [ "requires-python", "classifiers", "dependencies",]
 [[project.authors]]
 email = "dominic@davis-foster.co.uk"

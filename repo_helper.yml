@@ -46,3 +46,8 @@ sphinx_conf_epilogue:
 
 tox_unmanaged:
  - testenv:lint
+
+keywords:
+ - flake8
+ - sphinx
+ - documentation
