@@ -125,11 +125,6 @@ flake8_sphinx_links
 
 .. end shields
 
-For example, \`\`True\`\` should be py\:obj:\`True\`, which Sphinx will render as a link to the Python documentation.
-See :doc:`examples` for further examples.
-
-reStructuredText .rst files are not currently checked.
-
 
 Installation
 ---------------
@@ -145,16 +140,6 @@ Installation
 .. end installation
 
 
-Use as a pre-commit hook
---------------------------
-
-See `pre-commit <https://github.com/pre-commit/pre-commit>`_ for instructions
-
-Sample ``.pre-commit-config.yaml``:
-
-.. pre-commit:flake8:: 0.2.0
-
-
 .. toctree::
 	:hidden:
 
@@ -164,7 +149,7 @@ Sample ``.pre-commit-config.yaml``:
 	:maxdepth: 3
 	:caption: Documentation
 
-	codes
+	usage
 	examples
 	API Reference<docs>
 

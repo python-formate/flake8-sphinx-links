@@ -13,6 +13,7 @@ short_desc: "A Flake8 plugin to check docstrings for double backticked strings w
 python_deploy_version: 3.6
 use_whey: true
 min_coverage: 100
+sphinx_html_theme: furo
 
 conda_channels:
  - conda-forge
