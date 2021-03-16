@@ -207,7 +207,7 @@ class Visitor(flake8_helper.Visitor):
 
 			if (
 					sys.version_info < (3, 8) and platform.python_implementation() != "PyPy"
-					):  # pragma: no cover (PY38+)
+					):  # pragma: no cover (PY38+ or PyPy)
 				doc_end_lineno = node.body[0].value.lineno  # type: ignore
 
 				# Calculate the start line
@@ -220,7 +220,7 @@ class Visitor(flake8_helper.Visitor):
 
 				doc_start_lineno += 1
 
-			else:  # pragma: no cover (<PY38)
+			else:  # pragma: no cover (<PY38 and !PyPy)
 				doc_start_lineno = node.body[0].value.lineno  # type: ignore
 
 			for offset, line in enumerate(docstring.splitlines()):
