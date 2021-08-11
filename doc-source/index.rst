@@ -4,7 +4,8 @@ flake8_sphinx_links
 
 .. start short_desc
 
-**A Flake8 plugin to check docstrings for double backticked strings which should be links to the Python documentation.**
+.. documentation-summary::
+	:meta:
 
 .. end short_desc
 
@@ -27,7 +28,7 @@ flake8_sphinx_links
 		* - Activity
 		  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 		* - QA
-		  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+		  - |codefactor| |actions_flake8| |actions_mypy|
 		* - Other
 		  - |license| |language| |requires|
 
@@ -120,9 +121,6 @@ flake8_sphinx_links
 		:downloads: month
 		:alt: PyPI - Downloads
 
-	.. |pre_commit_ci| pre-commit-ci-shield::
-		:alt: pre-commit.ci status
-
 .. end shields
 
 
@@ -140,6 +138,11 @@ Installation
 .. end installation
 
 
+Contents
+-------------
+
+.. html-section::
+
 .. toctree::
 	:hidden:
 
@@ -147,18 +150,20 @@ Installation
 
 .. toctree::
 	:maxdepth: 3
-	:caption: Documentation
 
 	usage
 	examples
 	API Reference<docs>
-
-.. toctree::
-	:maxdepth: 3
-	:caption: Contributing
-
-	contributing
 	Source
+	license
+
+.. sidebar-links::
+	:caption: Links
+	:github:
+	:pypi: flake8_sphinx_links
+
+	Contributing Guide<https://contributing-to-formate.readthedocs.io>
+
 
 .. start links
 
@@ -166,6 +171,6 @@ Installation
 
 	View the :ref:`Function Index <genindex>` or browse the `Source Code <_modules/index.html>`__.
 
-	`Browse the GitHub Repository <https://github.com/domdfcoding/flake8-sphinx-links>`__
+	:github:repo:`Browse the GitHub Repository <python-formate/flake8-sphinx-links>`
 
 .. end links

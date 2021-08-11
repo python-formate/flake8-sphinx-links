@@ -6,7 +6,9 @@ copyright_years: "2020-2021"
 author: "Dominic Davis-Foster"
 email: "dominic@davis-foster.co.uk"
 version: "0.2.1"
-username: "domdfcoding"
+username: "python-formate"
+assignee: "domdfcoding"
+primary_conda_channel: "domdfcoding"
 license: 'MIT'
 short_desc: "A Flake8 plugin to check docstrings for double backticked strings which should be links to the Python documentation."
 
@@ -14,7 +16,8 @@ python_deploy_version: 3.6
 use_whey: true
 min_coverage: 100
 sphinx_html_theme: furo
-mypy_version: "0.812"
+mypy_version: "0.910"
+docs_fail_on_warning: true
 
 conda_channels:
  - conda-forge
@@ -38,6 +41,9 @@ classifiers:
 extra_sphinx_extensions:
  - sphinx_toolbox.pre_commit
  - sphinx_toolbox.flake8
+ - sphinx_toolbox_experimental.html_section
+ - sphinx_toolbox_experimental.autosummary_widths
+ - sphinx_toolbox_experimental.needspace
 
 entry_points:
   flake8.extension:
@@ -45,6 +51,7 @@ entry_points:
 
 sphinx_conf_epilogue:
  - nitpicky = True
+ - autosummary_widths_builders = ["latex"]
 
 tox_unmanaged:
  - testenv:lint
@@ -53,3 +60,6 @@ keywords:
  - flake8
  - sphinx
  - documentation
+
+exclude_files:
+ - contributing
