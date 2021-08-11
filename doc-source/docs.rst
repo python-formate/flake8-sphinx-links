@@ -18,7 +18,7 @@ to allow other plugins to build on top of ``flake8-sphinx-links``.
 .. autoclass:: flake8_sphinx_links.Visitor
 .. autovariable:: flake8_sphinx_links.exc
 .. autovariable:: flake8_sphinx_links.py_obj
-.. autovariable:: flake8_sphinx_links.py_obj_pattern
+.. autovariable:: flake8_sphinx_links.py_obj_python
 
 .. autoregex:: flake8_sphinx_links.regex
 	:no-value:
