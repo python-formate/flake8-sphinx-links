@@ -54,10 +54,6 @@ sphinx_conf_epilogue:
  - needspace_amount = r"5\baselineskip"
  - 'favicons = [{"rel": "icon", "href": "https://python-formate.github.io/assets/formate.ico",  "sizes": "48x48", "type": "image/vnd.microsoft.icon"}]'
 
-
-tox_unmanaged:
- - testenv:lint
-
 keywords:
  - flake8
  - sphinx
