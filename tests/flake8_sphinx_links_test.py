@@ -1,5 +1,6 @@
 # stdlib
 import ast
+from typing import Set
 
 # 3rd party
 import pytest
@@ -8,7 +9,7 @@ import pytest
 from flake8_sphinx_links import SXL001, Plugin, class_, exc, py_obj, py_obj_python
 
 
-def results(s):
+def results(s: str) -> Set[str]:
 	return {"{}:{}: {}".format(*r) for r in Plugin(ast.parse(s)).run()}
 
 
@@ -49,7 +50,7 @@ def good_docstring():
 
 
 @pytest.mark.parametrize("obj", py_obj_python)
-def test_bad_docstring_py_obj_python(obj):
+def test_bad_docstring_py_obj_python(obj: str):
 	test_code = f'''"""
 
 ``{obj}``
@@ -119,7 +120,7 @@ class good_docstring():
 
 
 @pytest.mark.parametrize("obj", class_)
-def test_bad_docstring_class_(obj):
+def test_bad_docstring_class_(obj: str):
 	test_code = f'''"""
 
 ``{obj}``

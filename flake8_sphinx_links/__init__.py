@@ -46,7 +46,7 @@ __license__: str = "MIT"
 __version__: str = "0.2.1"
 __email__: str = "dominic@davis-foster.co.uk"
 
-__all__ = [
+__all__ = (
 		"SXL001",
 		"Visitor",
 		"Plugin",
@@ -55,9 +55,9 @@ __all__ = [
 		"exc",
 		"class_",
 		"regex",
-		]
+		)
 
-SXL001: str = "SXL001 Double backticked strings should be a link to Python documentation."  # noqa: E501
+SXL001: str = "SXL001 Double backticked strings should be a link to Python documentation."
 
 #: List of keywords which should become :file:`:py:obj:\`{<keyword>}\``
 py_obj: List[str] = [
