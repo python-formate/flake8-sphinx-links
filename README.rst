@@ -58,8 +58,8 @@ flake8_sphinx_links
 	:target: https://github.com/python-formate/flake8-sphinx-links/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://dependency-dash.herokuapp.com/github/python-formate/flake8-sphinx-links/badge.svg
-	:target: https://dependency-dash.herokuapp.com/github/python-formate/flake8-sphinx-links/
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/python-formate/flake8-sphinx-links/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/python-formate/flake8-sphinx-links/
 	:alt: Requirements Status
 
 .. |coveralls| image:: https://img.shields.io/coveralls/github/python-formate/flake8-sphinx-links/master?logo=coveralls
