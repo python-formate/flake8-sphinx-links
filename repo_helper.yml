@@ -12,7 +12,7 @@ primary_conda_channel: "domdfcoding"
 license: 'MIT'
 short_desc: "A Flake8 plugin to check docstrings for double backticked strings which should be links to the Python documentation."
 
-python_deploy_version: 3.6
+python_deploy_version: 3.7
 use_whey: true
 min_coverage: 100
 sphinx_html_theme: furo
@@ -27,11 +27,13 @@ python_versions:
  - '3.7'
  - '3.8'
  - '3.9'
- - "3.10"
- - 3.11-dev
+ - '3.10'
+ - '3.11'
+ - 3.12-dev
  - pypy36
  - pypy37
  - pypy38
+ - pypy39
 
 classifiers:
  - 'Development Status :: 4 - Beta'
