@@ -4,7 +4,7 @@ build-backend = "whey"
 
 [project]
 name = "flake8_sphinx_links"
-version = "0.2.1"
+version = "0.2.2"
 description = "A Flake8 plugin to check docstrings for double backticked strings which should be links to the Python documentation."
 readme = "README.rst"
 keywords = [ "documentation", "flake8", "sphinx",]

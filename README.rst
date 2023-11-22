@@ -101,7 +101,7 @@ flake8_sphinx_links
 .. |language| image:: https://img.shields.io/github/languages/top/python-formate/flake8-sphinx-links
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/python-formate/flake8-sphinx-links/v0.2.1
+.. |commits-since| image:: https://img.shields.io/github/commits-since/python-formate/flake8-sphinx-links/v0.2.2
 	:target: https://github.com/python-formate/flake8-sphinx-links/pulse
 	:alt: GitHub commits since tagged version
 
@@ -175,4 +175,4 @@ Sample ``.pre-commit-config.yaml``:
 	   rev: 3.8.1
 	   hooks:
 	    - id: flake8
-	      additional_dependencies: [flake8-sphinx-links==0.2.1]
+	      additional_dependencies: [flake8-sphinx-links==0.2.2]
