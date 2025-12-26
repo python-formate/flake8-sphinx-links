@@ -190,6 +190,8 @@ class Visitor(flake8_helper.Visitor):
 	def _check_docstring(self, node: Union[ast.ClassDef, ast.FunctionDef, ast.Module]) -> None:
 		"""
 		Check the docstring of a function, or a method of a class.
+
+		:param node:
 		"""
 
 		docstring = ast.get_docstring(node, clean=False)
@@ -208,7 +210,7 @@ class Visitor(flake8_helper.Visitor):
 			if (
 					sys.version_info < (3, 8) and platform.python_implementation() != "PyPy"
 					):  # pragma: no cover (PY38+ or PyPy)
-				doc_end_lineno = node.body[0].value.lineno  # type: ignore
+				doc_end_lineno = node.body[0].value.lineno
 
 				# Calculate the start line
 				doc_start_lineno = doc_end_lineno - doc_line_length
@@ -221,7 +223,7 @@ class Visitor(flake8_helper.Visitor):
 				doc_start_lineno += 1
 
 			else:  # pragma: no cover (<PY38 and !PyPy)
-				doc_start_lineno = node.body[0].value.lineno  # type: ignore
+				doc_start_lineno = node.body[0].value.lineno  # type: ignore[attr-defined]
 
 			for offset, line in enumerate(docstring.splitlines()):
 

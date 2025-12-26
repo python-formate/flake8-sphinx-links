@@ -1,6 +1,6 @@
 # stdlib
 import ast
-from typing import Set
+from typing import Any, Set
 
 # 3rd party
 import pytest
@@ -14,7 +14,7 @@ def results(s: str) -> Set[str]:
 
 
 @pytest.mark.parametrize("obj", py_obj)
-def test_bad_docstring_py_obj(obj):
+def test_bad_docstring_py_obj(obj: Any):
 	test_code = f'''"""
 
 ``{obj}``
@@ -41,12 +41,8 @@ def good_docstring():
 
 '''
 
-	assert results(test_code
-					) == {  # noqa: sphinx_links001
-							f"3:0: {SXL001}",
-							f"8:0: {SXL001}",
-							f"13:1: {SXL001}",
-							}
+	expected_results = {f"3:0: {SXL001}", f"8:0: {SXL001}", f"13:1: {SXL001}"}
+	assert results(test_code) == expected_results
 
 
 @pytest.mark.parametrize("obj", py_obj_python)
@@ -77,16 +73,12 @@ class good_docstring():
 
 '''
 
-	assert results(test_code
-					) == {  # noqa: sphinx_links001
-							f"3:0: {SXL001}",
-							f"8:0: {SXL001}",
-							f"13:1: {SXL001}",
-							}
+	expected_results = {f"3:0: {SXL001}", f"8:0: {SXL001}", f"13:1: {SXL001}"}
+	assert results(test_code) == expected_results
 
 
 @pytest.mark.parametrize("obj", exc)
-def test_bad_docstring_exc(obj):
+def test_bad_docstring_exc(obj: Any):
 	test_code = f'''"""
 
 ``{obj}``
@@ -111,12 +103,8 @@ class good_docstring():
 
 '''
 
-	assert results(test_code
-					) == {  # noqa: sphinx_links001
-							f"3:0: {SXL001}",
-							f"8:0: {SXL001}",
-							f"12:0: {SXL001}",
-							}
+	expected_results = {f"3:0: {SXL001}", f"8:0: {SXL001}", f"12:0: {SXL001}"}
+	assert results(test_code) == expected_results
 
 
 @pytest.mark.parametrize("obj", class_)
@@ -145,9 +133,5 @@ class good_docstring():
 
 '''
 
-	assert results(test_code
-					) == {  # noqa: sphinx_links001
-							f"3:0: {SXL001}",
-							f"8:0: {SXL001}",
-							f"13:1: {SXL001}",
-							}
+	expected_results = {f"3:0: {SXL001}", f"8:0: {SXL001}", f"13:1: {SXL001}"}
+	assert results(test_code) == expected_results
