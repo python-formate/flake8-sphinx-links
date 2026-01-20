@@ -114,7 +114,7 @@ flake8_sphinx_links
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2025
+	.. |maintained| maintained-shield:: 2026
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
@@ -130,10 +130,11 @@ Installation
 
 .. start installation
 
-.. installation:: flake8_sphinx_links
+.. installation:: flake8-sphinx-links
 	:pypi:
 	:github:
 	:anaconda:
+	:conda-name: flake8_sphinx_links
 	:conda-channels: conda-forge, domdfcoding
 
 .. end installation
