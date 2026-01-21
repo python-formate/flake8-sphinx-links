@@ -7,4 +7,4 @@ License
 .. license-info:: MIT
 
 .. license::
-	:py: flake8_sphinx_links
+	:py: flake8-sphinx-links

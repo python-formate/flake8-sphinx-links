@@ -71,22 +71,22 @@ flake8_sphinx_links
 		:alt: CodeFactor Grade
 
 	.. |pypi-version| pypi-shield::
-		:project: flake8_sphinx_links
+		:project: flake8-sphinx-links
 		:version:
 		:alt: PyPI - Package Version
 
 	.. |supported-versions| pypi-shield::
-		:project: flake8_sphinx_links
+		:project: flake8-sphinx-links
 		:py-versions:
 		:alt: PyPI - Supported Python Versions
 
 	.. |supported-implementations| pypi-shield::
-		:project: flake8_sphinx_links
+		:project: flake8-sphinx-links
 		:implementations:
 		:alt: PyPI - Supported Implementations
 
 	.. |wheel| pypi-shield::
-		:project: flake8_sphinx_links
+		:project: flake8-sphinx-links
 		:wheel:
 		:alt: PyPI - Wheel
 
@@ -118,7 +118,7 @@ flake8_sphinx_links
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
-		:project: flake8_sphinx_links
+		:project: flake8-sphinx-links
 		:downloads: month
 		:alt: PyPI - Downloads
 
