@@ -70,20 +70,20 @@ flake8_sphinx_links
 	:target: https://www.codefactor.io/repository/github/python-formate/flake8-sphinx-links
 	:alt: CodeFactor Grade
 
-.. |pypi-version| image:: https://img.shields.io/pypi/v/flake8_sphinx_links
-	:target: https://pypi.org/project/flake8_sphinx_links/
+.. |pypi-version| image:: https://img.shields.io/pypi/v/flake8-sphinx-links
+	:target: https://pypi.org/project/flake8-sphinx-links/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/flake8_sphinx_links?logo=python&logoColor=white
-	:target: https://pypi.org/project/flake8_sphinx_links/
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/flake8-sphinx-links?logo=python&logoColor=white
+	:target: https://pypi.org/project/flake8-sphinx-links/
 	:alt: PyPI - Supported Python Versions
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/flake8_sphinx_links
-	:target: https://pypi.org/project/flake8_sphinx_links/
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/flake8-sphinx-links
+	:target: https://pypi.org/project/flake8-sphinx-links/
 	:alt: PyPI - Supported Implementations
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/flake8_sphinx_links
-	:target: https://pypi.org/project/flake8_sphinx_links/
+.. |wheel| image:: https://img.shields.io/pypi/wheel/flake8-sphinx-links
+	:target: https://pypi.org/project/flake8-sphinx-links/
 	:alt: PyPI - Wheel
 
 .. |conda-version| image:: https://img.shields.io/conda/v/domdfcoding/flake8_sphinx_links?logo=anaconda
@@ -112,8 +112,8 @@ flake8_sphinx_links
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2026
 	:alt: Maintenance
 
-.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/flake8_sphinx_links
-	:target: https://pypistats.org/packages/flake8_sphinx_links
+.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/flake8-sphinx-links
+	:target: https://pypistats.org/packages/flake8-sphinx-links
 	:alt: PyPI - Downloads
 
 .. end shields
